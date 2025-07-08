@@ -948,6 +948,7 @@ lastSuccessfulBackupByMethod
 latestGeneratedNode
 latn
 lc
+ld
 ldap
 ldapBindPassword
 ldaps
