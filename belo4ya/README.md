@@ -1,11 +1,11 @@
-# CloudNativePG on older versions of Kubernetes
+# CloudNativePG for old Kubernetes versions
 
 ## GitHub Actions
 
 E2E tests matrix:
 
-- Kubernetes (kind): v1.27.16, v1.26.15, v1.25.16 (актуальная информация в [.github/kind_versions.json](../.github/kind_versions.json))
-- PostgreSQL: 16.9  (актуальная информация в [.github/pg_versions.json](../.github/pg_versions.json))
+- Kubernetes (kind): v1.27.16, v1.26.15, v1.25.16 (актуальные значения в [.github/kind_versions.json](../.github/kind_versions.json))
+- PostgreSQL: 16.9  (актуальные значения в [.github/pg_versions.json](../.github/pg_versions.json))
 - Operator: 
   1.26.0 (ветка [e2e/v1.26.0](https://github.com/belo4ya/cloudnative-pg/tree/e2e/v1.26.0)), 
   1.25.2 (ветка [e2e/v1.25.2](https://github.com/belo4ya/cloudnative-pg/tree/e2e/v1.25.2))
