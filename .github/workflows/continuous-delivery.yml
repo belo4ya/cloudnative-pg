@@ -647,7 +647,7 @@ jobs:
         with:
           name: testartifacts-${{ env.MATRIX }}
           path: testartifacts-${{ env.MATRIX }}/
-          retention-days: 3
+          retention-days: 10
       -
         name: Cleanup test artifacts
         if: always()
@@ -673,7 +673,7 @@ jobs:
         with:
           name: kind-logs-${{ matrix.id }}
           path: kind-logs/
-          retention-days: 3
+          retention-days: 10
       -
         name: Archive e2e failure contexts
         if: failure()
@@ -682,7 +682,7 @@ jobs:
           name: test-failure-contexts-${{ matrix.id }}
           path: |
             tests/*/out/
-          retention-days: 3
+          retention-days: 10
           if-no-files-found: ignore
 
       -
@@ -693,7 +693,7 @@ jobs:
           name: cluster-logs-${{ matrix.id }}
           path: |
             tests/e2e/cluster_logs/**
-          retention-days: 3
+          retention-days: 10
           if-no-files-found: ignore
 
   # Summarize E2E test results, display in the GitHub 'summary' view
@@ -742,7 +742,7 @@ jobs:
         with:
           name: ${{ steps.generate-summary.outputs.Overflow }}
           path: ${{ steps.generate-summary.outputs.Overflow }}
-          retention-days: 3
+          retention-days: 10
 
       - name: Delete the downloaded files
         run: rm -rf test-artifacts
