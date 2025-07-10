@@ -36,7 +36,7 @@ sudo su
 ./setup-ubuntu24.sh
 ```
 
-[Makefile](Makefile):
+Смотри [Makefile](Makefile):
 
 ```shell
 FEATURE_TYPE=smoke make e2e
