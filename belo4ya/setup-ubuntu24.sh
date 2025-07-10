@@ -274,20 +274,14 @@ setup_e2e_environment() {
 
   mkdir -p "$HOME/go/bin"
 
-  # Check if the environment variables are already in .bashrc
-  if ! grep -q "CloudNativePG E2E environment" ~/.bashrc; then
-    {
-      echo ""
-      echo "# CloudNativePG E2E environment"
-      echo "export PATH=\$PATH:/usr/local/go/bin"
-      echo "export GOPATH=\$HOME/go"
-      echo "export PATH=\$PATH:\$GOPATH/bin"
-      echo "export KUBECONFIG=\$HOME/.kube/config"
-    } >> ~/.bashrc
-    log_success "E2E environment variables added to ~/.bashrc"
-  else
-    log_warning "E2E environment variables already exist in ~/.bashrc"
-  fi
+  {
+    echo ""
+    echo "# CloudNativePG E2E environment"
+    echo "export PATH=\$PATH:/usr/local/go/bin"
+    echo "export GOPATH=\$HOME/go"
+    echo "export PATH=\$PATH:\$GOPATH/bin"
+    echo "export KUBECONFIG=\$HOME/.kube/config"
+  } >> ~/.bashrc
 
   log_success "E2E environment configured"
 }
