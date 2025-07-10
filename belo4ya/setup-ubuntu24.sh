@@ -117,7 +117,8 @@ install_go() {
 install_kind() {
   log_info "Installing Kind..."
 
-  curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.29.0/kind-linux-amd64
+  KIND_VERSION="v0.29.0"
+  curl -Lo ./kind "https://kind.sigs.k8s.io/dl/${KIND_VERSION}/kind-linux-amd64"
   chmod +x ./kind
   sudo mv ./kind /usr/local/bin/kind
 
