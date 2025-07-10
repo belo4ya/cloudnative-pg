@@ -86,6 +86,7 @@ install_docker() {
   sudo apt-get update -y
 
   sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  sudo usermod -aG docker $USER
 
   docker pull postgres:16
 
@@ -320,7 +321,7 @@ print_next_steps() {
 main() {
   log_info "Starting CloudNativePG E2E test dependencies installation..."
 
-  #check_root
+  check_root
   update_system
   install_basic_deps
   install_docker
