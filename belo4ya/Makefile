@@ -7,6 +7,7 @@
 #K8S_VERSION=v1.26.15
 #K8S_VERSION=v1.25.16
 #FEATURE_TYPE='backup-restore,basic,operator,smoke,snapshot,storage'
+#FEATURE_TYPE='!postgres-configuration'
 #FEATURE_TYPE='!backup-restore'
 
 TEST_DEPTH ?= 4 # from `0` (only critical tests) to `4` (all the tests)
