@@ -28,12 +28,12 @@ log_level: info
 
 ### Результаты
 
-
 #### Запуск 1
 
 - 🟢 - local: 100.0% success. (0 out of 308 tests failed)
 
-[Action Workflow Summary](https://github.com/belo4ya/cloudnative-pg/actions/runs/16204521183/attempts/1#summary-45754644937). Бекап - [summary/e2e_main_short.md](summary/e2e_main_short.md)
+[Action Workflow Summary](https://github.com/belo4ya/cloudnative-pg/actions/runs/16204521183/attempts/1#summary-45754644937).
+Бекап - [summary/e2e_main_short.md](summary/e2e_main_short.md)
 
 - Kubernetes (kind): v1.33.1, v1.27.16, v1.26.15, v1.25.16
 - PostgreSQL: 16.9
@@ -44,12 +44,29 @@ log_level: info
 
 - 🟢 - local: 100.0% success. (0 out of 561 tests failed)
 
-[Action Workflow Summary](https://github.com/belo4ya/cloudnative-pg/actions/runs/16212047280/attempts/1#summary-45779927404). Бекап - [summary/e2e_main.md](summary/e2e_main.md)
+[Action Workflow Summary](https://github.com/belo4ya/cloudnative-pg/actions/runs/16212047280/attempts/1#summary-45779927404).
+Бекап - [summary/e2e_main.md](summary/e2e_main.md)
 
 - Kubernetes (kind): v1.27.16, v1.26.15, v1.25.16
 - PostgreSQL: 16.9
 - Operator: 1.26.0
 - feature_type: `!postgres-configuration`
+
+#### Запуск 3
+
+- 🟡 - local: 96.3% success. (28 out of 772 tests failed)
+
+[Action Workflow Summary](https://github.com/belo4ya/cloudnative-pg/actions/runs/16205696019/attempts/1#summary-45762679567).
+Бекап - [summary/e2e_main_all.md](summary/e2e_main_all.md)
+
+- Kubernetes (kind): v1.33.1, v1.27.16, v1.26.15, v1.25.16
+- PostgreSQL: 16.9
+- Operator: 1.26.0
+- feature_type:
+  `backup-restore,basic,cluster-metadata,declarative-databases,disruptive,importing-databases,maintenance,no-openshift,observability,operator,performance,plugin,pod-scheduling,postgres-configuration,postgres-major-upgrade,publication-subscription,recovery,replication,security,self-healing,service-connectivity,smoke,snapshot,storage,tablespaces,upgrade`
+
+Падает единственный тест под лейблом `postgres-configuration`, при этом во всех окружениях (даже в v1.33.1).
+Возможно, я что-то неправильно настроил с CI.
 
 ## Local
 
