@@ -31,7 +31,7 @@ log_level: info
 
 #### Запуск 1
 
-- 🟢 - local: 100.0% success.	(0 out of 308 tests failed)
+- 🟢 - local: 100.0% success. (0 out of 308 tests failed)
 
 [Action Workflow Summary](https://github.com/belo4ya/cloudnative-pg/actions/runs/16204521183/attempts/1#summary-45754644937). Бекап - [summary/e2e_main_short.md](summary/e2e_main_short.md)
 
@@ -41,6 +41,8 @@ log_level: info
 - feature_type: `backup-restore,basic,operator,smoke,snapshot,storage`
 
 #### Запуск 2
+
+- 🟢 - local: 100.0% success. (0 out of 561 tests failed)
 
 [Action Workflow Summary](https://github.com/belo4ya/cloudnative-pg/actions/runs/16212047280/attempts/1#summary-45779927404). Бекап - [summary/e2e_main.md](summary/e2e_main.md)
 
