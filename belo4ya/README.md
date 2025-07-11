@@ -13,7 +13,8 @@ E2E tests matrix:
   ~~1.25.2 (ветка [e2e/v1.25.2](https://github.com/belo4ya/cloudnative-pg/tree/e2e/v1.25.2))~~
 
 Запустить [continuous-delivery](https://github.com/belo4ya/cloudnative-pg/actions/workflows/continuous-delivery.yml)
-workflow из ветки [e2e/main](https://github.com/belo4ya/cloudnative-pg/tree/e2e/main) ~~[e2e/v1.26.0](https://github.com/belo4ya/cloudnative-pg/tree/e2e/v1.26.0)
+workflow из ветки [e2e/main](https://github.com/belo4ya/cloudnative-pg/tree/e2e/main)
+~~[e2e/v1.26.0](https://github.com/belo4ya/cloudnative-pg/tree/e2e/v1.26.0)
 или [e2e/v1.25.2](https://github.com/belo4ya/cloudnative-pg/tree/e2e/v1.25.2)~~.
 
 Inputs:
@@ -71,7 +72,8 @@ log_level: info
 
 ## Local
 
-> 🚧 TODO
+> 🚧 TODO: если есть все необходимые зависимости на MacOS, то можно запускать команды из [Makefile](Makefile).
+> Для Ubuntu 24.4 в процессе
 
 **Не запускать в своем окружении!**
 
