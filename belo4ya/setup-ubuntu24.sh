@@ -273,6 +273,7 @@ setup_e2e_environment() {
   log_info "Setting up E2E test environment..."
 
   mkdir -p "$HOME/go/bin"
+  mkdir -p "$HOME/.kube"
 
   {
     echo ""
