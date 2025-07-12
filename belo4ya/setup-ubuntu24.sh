@@ -24,13 +24,6 @@ log_error() {
   echo -e "${RED}[ERROR]${NC} $1"
 }
 
-check_root() {
-  if [[ $EUID -eq 0 ]]; then
-      log_error "This script should not be run as root. Please run as a regular user with sudo privileges."
-      exit 1
-  fi
-}
-
 update_system() {
   log_info "Updating system packages..."
   sudo apt-get update -y
@@ -62,7 +55,8 @@ install_basic_deps() {
       pandoc \
       sed \
       util-linux \
-      zlib1g
+      zlib1g \
+      zlib1g-dev
   log_success "Basic dependencies installed"
 }
 
@@ -324,7 +318,6 @@ print_next_steps() {
 main() {
   log_info "Starting CloudNativePG E2E test dependencies installation..."
 
-  #check_root
   update_system
   install_basic_deps
   install_docker
