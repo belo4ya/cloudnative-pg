@@ -80,7 +80,7 @@ log_level: info
 ```shell
 git clone https://github.com/belo4ya/cloudnative-pg && cd cloudnative-pg && git checkout -b e2e/main origin/e2e/main && cd belo4ya
 sudo su
-./setup-ubuntu24.sh
+./setup-ubuntu24.sh && source ~/.bashrc
 ```
 
 Смотри [Makefile](Makefile):

@@ -23,7 +23,6 @@ DEFAULT_K8S_VERSION = v1.33.1
 POSTGRES_IMG ?= ghcr.io/cloudnative-pg/postgresql:$(DEFAULT_PG_VERSION)
 CONTROLLER_IMG ?= ghcr.io/cloudnative-pg/cloudnative-pg:$(DEFAULT_CNPG_VERSION)
 K8S_VERSION ?= $(DEFAULT_K8S_VERSION)
-REPO_TAG ?= v$(DEFAULT_CNPG_VERSION)
 
 .PHONY: clone-repo
 clone-repo:
@@ -41,7 +40,7 @@ e2e: clone-repo
 	export POSTGRES_IMG=$(POSTGRES_IMG) && \
 	export CONTROLLER_IMG=$(CONTROLLER_IMG) && \
 	export K8S_VERSION=$(K8S_VERSION) && \
-	cd cloudnative-pg && git checkout $(REPO_TAG) && BUILD_IMAGE=false make e2e-test-kind
+	cd cloudnative-pg && BUILD_IMAGE=false make e2e-test-kind
 
 .PHONY: e2e-1.26.0-k8s-v1.26.15-pg-16.9
 e2e-1.26.0-k8s-v1.26.15-pg-16.9: clone-repo
@@ -51,7 +50,7 @@ e2e-1.26.0-k8s-v1.26.15-pg-16.9: clone-repo
 	export POSTGRES_IMG=ghcr.io/cloudnative-pg/postgresql:16.9 && \
 	export CONTROLLER_IMG=ghcr.io/cloudnative-pg/cloudnative-pg:1.26.0 && \
 	export K8S_VERSION=v1.26.15 && \
-	cd cloudnative-pg && git checkout $(REPO_TAG) && BUILD_IMAGE=false make e2e-test-kind
+	cd cloudnative-pg && BUILD_IMAGE=false make e2e-test-kind
 
 .PHONY: e2e-1.26.0-k8s-v1.25.16-pg-16.9
 e2e-1.26.0-k8s-v1.25.16-pg-16.9: clone-repo
@@ -61,7 +60,4 @@ e2e-1.26.0-k8s-v1.25.16-pg-16.9: clone-repo
 	export POSTGRES_IMG=ghcr.io/cloudnative-pg/postgresql:16.9 && \
 	export CONTROLLER_IMG=ghcr.io/cloudnative-pg/cloudnative-pg:1.26.0 && \
 	export K8S_VERSION=v1.25.16 && \
-	cd cloudnative-pg && git checkout $(REPO_TAG) && BUILD_IMAGE=false make e2e-test-kind
-
-.PHONY: setup-ubuntu24
-setup-ubuntu24: setup-ubuntu24.sh
+	cd cloudnative-pg && BUILD_IMAGE=false make e2e-test-kind

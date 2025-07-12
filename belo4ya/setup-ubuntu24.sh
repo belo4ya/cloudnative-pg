@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -xeuo pipefail
+set -euo pipefail
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -281,40 +281,6 @@ setup_e2e_environment() {
   log_success "E2E environment configured"
 }
 
-print_next_steps() {
-  echo
-  echo "================================================================================"
-  log_success "CloudNativePG E2E test dependencies installed successfully!"
-  echo "================================================================================"
-  echo
-  echo "Next steps:"
-  echo "1. Logout and login again (or run: source ~/.bashrc)"
-  echo "2. Navigate to the repository: cd ~/cloudnative-pg"
-  echo "3. Run E2E tests with one of these commands:"
-  echo
-  echo "   # Run all E2E tests:"
-  echo "   ./hack/e2e/run-e2e-kind.sh"
-  echo
-  echo "   # Run specific feature tests:"
-  echo "   FEATURE_TYPE=basic ./hack/e2e/run-e2e-kind.sh"
-  echo
-  echo "   # Run tests with custom Kubernetes version:"
-  echo "   K8S_VERSION=v1.32.0 ./hack/e2e/run-e2e-kind.sh"
-  echo
-  echo "   # Run local tests (on existing cluster):"
-  echo "   ./hack/e2e/run-e2e-local.sh"
-  echo
-  echo "Available environment variables:"
-  echo "   K8S_VERSION - Kubernetes version (default: v1.33.1)"
-  echo "   FEATURE_TYPE - Test filter (e.g., basic, backup, monitoring)"
-  echo "   PRESERVE_CLUSTER - Keep cluster after tests (default: false)"
-  echo "   BUILD_IMAGE - Build operator image locally (default: true)"
-  echo "   DEBUG - Enable debug output (default: false)"
-  echo
-  echo "For more information, see: ~/cloudnative-pg/contribute/development_environment/"
-  echo "================================================================================"
-}
-
 main() {
   log_info "Starting CloudNativePG E2E test dependencies installation..."
 
@@ -328,7 +294,6 @@ main() {
   install_go_tools
   setup_e2e_environment
   verify_installations
-  print_next_steps
 
   log_success "Installation completed successfully!"
   log_warning "Please logout and login again to apply environment changes."
