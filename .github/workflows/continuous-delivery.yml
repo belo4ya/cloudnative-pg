@@ -2,8 +2,6 @@
 # represent different execution environments
 name: continuous-delivery
 on:
-  issue_comment:
-    type: [created]
   # Manually or triggered by another workflow
   workflow_dispatch:
     inputs:
@@ -29,8 +27,6 @@ on:
         description: 'Log level for operator (error, warning, info, debug(default), trace)'
         required: false
         default: 'debug'
-  schedule:
-    - cron:  '0 1 * * *'
 
 permissions: read-all
 
