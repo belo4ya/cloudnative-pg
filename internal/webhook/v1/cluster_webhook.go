@@ -1057,12 +1057,12 @@ func (v *ClusterCustomValidator) validateConfiguration(r *apiv1.Cluster) field.E
 		// validateImageName function
 		return result
 	}
-	if pgMajor < 13 {
+	if pgMajor < 12 {
 		result = append(result,
 			field.Invalid(
 				field.NewPath("spec", "imageName"),
 				r.Spec.ImageName,
-				"Unsupported PostgreSQL version. Versions 13 or newer are supported"))
+				"Unsupported PostgreSQL version. Versions 12 or newer are supported"))
 	}
 	info := postgres.ConfigurationInfo{
 		Settings:               postgres.CnpgConfigurationSettings,
